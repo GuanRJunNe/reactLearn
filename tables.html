@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .no{
+      background-color: green;
+    }
+    .yes{
+      background-color: pink;
+    }
+    .normal{
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <h3>项目清单</h3>
+  <div id='tables'></div>
+
+</body>
+<script>
+  var html='<table border="1" width="800" height="500" align="center">'+
+    '<tr text-align="center">'+'<th>序号</th>'+
+      '<th>项目名字</th>'+'<th>建设单位</th>'+'<th>建设日期</th>'+'<th>进度</th>'
+    var str = [
+      {num:1,name:'gggg',dan:'lll',time:'00000',done:0},
+      {num:1,name:'gggg',dan:'lll',time:'00000',done:1},
+      {num:1,name:'gggg',dan:'lll',time:'00000',done:1},
+      {num:1,name:'gggg',dan:'lll',time:'00000',done:0}
+    ]
+    var  className=''
+    for(var i =0;i<str.length;i++){
+      if(str[i].done=='0'){
+        className='no'
+      }else if(str[i].done=='1'){
+        className='yes'
+      }else{
+        className='normal'
+      }
+   
+     html+= '<tr class="' + className + '">'  +'<td>'+str[i].num+'</td>'
+      +'<td>'+str[i].name+'</td>'
+      +'<td>'+str[i].dan+'</td>'
+      +'<td>'+str[i].time+'</td>'
+      +'<td>'+(str[i].done==0?"未完成":"已完成")+'</td>'+'</tr>'
+    }
+     html+='</table>'
+     document.getElementById('tables').innerHTML=html; 
+
+      
+
+</script>
+</html>

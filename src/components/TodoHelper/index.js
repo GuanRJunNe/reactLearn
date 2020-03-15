@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 export default function TodoHelper (props){
     return (
@@ -9,7 +9,7 @@ export default function TodoHelper (props){
     )
   
 }
-
+  
 
 TodoHelper.propTypes = {
   help:PropTypes.string

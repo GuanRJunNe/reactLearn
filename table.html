@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>项目清单</title>
+  <style>
+    .pass {
+      background: green;
+    }
+    .noPass {
+      background: red;
+    }
+    .blue {
+      background: blue;
+    }
+  </style>
+</head>
+<h3 style="text-align: center;">项目清单</h3>
+<div id="tableBox"></div>
+<body>
+
+</body>
+<script>
+    let html = '<table border="1" height="500" width="1000" cellspacing="0" align="center">' +
+                  '<tr align="center">' +
+                      '<th>序号</th>' +
+                      '<th>项目名称</th>' +
+                      '<th>建设单位</th>' +
+                      '<th>建设日期</th>' +
+                      '<th>项目状态</th>' +
+                  '</tr>'
+
+  let data = [{num: 1, proName: 'hahah', dept: 'lll', date: '2020/3/12', status: 0},
+      {num: 1, proName: 'hahah', dept: 'lll', date: '2020/3/12', status: 0},
+      {num: 1, proName: 'hahah', dept: 'lll', date: '2020/3/12', status: 1},
+      {num: 1, proName: 'hahah', dept: 'lll', date: '2020/3/12', status: 1},
+      {num: 1, proName: 'hahah', dept: 'lll', date: '2020/3/12', status: 2},
+      {num: 1, proName: 'hahah', dept: 'lll', date: '2020/3/12', status: 2},]
+    let className = ''
+  for (let i = 0; i < data.length; i++) {
+      if (data[i].status == 0) {
+          className = 'noPass'
+      } else if (data[i].status == 1) {
+          className = 'pass'
+      } else {
+          className = 'blue'
+      }
+      // html += '<tr class="' + (data[i].status ? 'pass':'noPass') + '">' +
+      html += '<tr class="' + className + '">' +
+                  '<td>' + data[i].num + '</td>' +
+                  '<td>' + data[i].proName + '</td>' +
+                  '<td>' + data[i].dept + '</td>' +
+                  '<td>' + data[i].date + '</td>' +
+                  '<td>' + data[i].status + '</td>' +
+              '</tr>'
+  }
+  html += '</table>'
+  document.getElementById('tableBox').innerHTML = html
+
+</script>
+</html>
